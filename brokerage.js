@@ -16,12 +16,14 @@ app.post("/", function(req, res) {
       var sell = qty*sellPrice;
       var net = buy + sell;
       var mtm = sell - buy;
+      mtm = mtm.toFixed(2);
       var brok = (0.05 / 100) * net;
       var igst = .18 * brok;
       var stt = (.025 / 100) * sell;
       var total = brok + igst + stt + 4;
-      //total=total.toPrecision(5);
+      total=+total.toFixed(2);
       var amt = mtm - total;
+      amt = +amt.toFixed(2)
       res.write("<h1>Net traded value (Buy+Sell) : " + net);
       res.write("<h1>Net BUY value : " + buy);
       res.write("<h1>Net SELL value : " + sell);
