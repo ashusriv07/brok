@@ -46,3 +46,12 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+.bottom-container{
+    background-color: #66BFBF;
+  position: relative;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
