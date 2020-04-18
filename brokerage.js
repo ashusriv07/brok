@@ -11,9 +11,13 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res) {
       var qty = Number(req.body.qty)
       var buyPrice = Number(req.body.buyPrice);
+
       var sellPrice = Number(req.body.sellPrice);
+
       var buy = qty*buyPrice;
+      buy = +buy.toFixed(2);
       var sell = qty*sellPrice;
+      sell = +sell.toFixed(2);
       var net = buy + sell;
       var mtm = sell - buy;
       mtm = mtm.toFixed(2);
